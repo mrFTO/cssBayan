@@ -7,7 +7,6 @@
 
 body {
   font-family: sans-serif;
-  
 }
 
 .container {
@@ -15,14 +14,52 @@ body {
   margin: 0 auto;
   padding-left: 10%;
   padding-right: 10%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.main-title {
+  font-weight: bold;
+  padding-top: 2%;
+  padding-bottom: 1%;
+}
+
+.mem-title {
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.mem-text {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content:hover {
+  cursor: pointer;
 }
 
 .mem-item {
   display: flex;
   flex-direction: column;
+  border-top: 1px solid lightgray;
 }
 
 .mem-image {
-  max-width: 50%;
+  display: block;
   margin: 0 auto;
+  width: 50%;
+  height: 100%;
 }
+.content:hover .mem-item:hover .mem-content,
+.content .mem-item__default .mem-content {
+  height: 50vh;
+}
+
+.mem-content,
+.content:hover .mem-content {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.45s;
+}
+
+
