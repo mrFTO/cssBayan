@@ -9,6 +9,17 @@ body {
   font-family: sans-serif;
 }
 
+.fa-solid.fa-plus,
+.fa-solid.fa-xmark {
+  display: none;
+  font-size: 1.4rem;
+  padding-left: 0.5em;
+}
+
+.fa-xmark {
+  padding-right: 0.1em;
+}
+
 .container {
   max-width: 1920px;
   margin: 0 auto;
@@ -19,19 +30,24 @@ body {
 }
 
 .main-title {
+  font-size: 20px;
   font-weight: bold;
-  padding-top: 2%;
-  padding-bottom: 1%;
+  padding-top: 3%;
+  padding-bottom: 2%;
 }
 
 .mem-title {
-    padding-top: 1%;
-    padding-bottom: 1%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  font-size: 18px;
+  font-weight: bold;
+  color: blue;
 }
 
 .mem-text {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .content:hover {
@@ -47,7 +63,7 @@ body {
 .mem-image {
   display: block;
   margin: 0 auto;
-  width: 50%;
+  max-width: 50%;
   height: 100%;
 }
 .content:hover .mem-item:hover .mem-content,
@@ -62,4 +78,38 @@ body {
   transition: height 0.45s;
 }
 
+.mem-item__default .mem-text .mem-title {
+  color: black;
+}
 
+.content:hover .mem-title,
+.content:hover .fa-plus {
+  color: black;
+  display: block;
+}
+
+.mem-item:hover .fa-plus {
+  display: none;
+}
+
+.mem-item:hover .fa-xmark {
+  display: block;
+}
+
+@media (max-width: 820px) {
+  .mem-image {
+    max-width: 70%;
+  }
+}
+
+@media (max-width: 320px) {
+  .main-title {
+    font-size: 18px;
+  }
+  .mem-title {
+    font-size: 14px;
+  }
+  .mem-image {
+    max-width: 100%;
+  }
+}
